@@ -57,13 +57,23 @@ function removeFromWatchlist(title) {
 function renderWatchlist() {
   const list = document.getElementById('watchlist');
   list.innerHTML = '';
+
   watchlist.forEach(title => {
-    const li = document.createElement('li');
-    li.innerHTML = `
-      ${title}
-      <button onclick="removeFromWatchlist('${title}')">Remove</button>
-    `;
-    list.appendChild(li);
+    fetch(`https://www.omdbapi.com/?t=${title}&apikey=${apiKey}`)
+      .then(res => res.json())
+      .then(data => {
+        const li = document.createElement('li');
+        li.classList.add('watchlist-item');
+
+        li.innerHTML = `
+          <div class="watchlist-movie" onclick="fetchMovie('${data.Title}')">
+            <img src="${data.Poster !== "N/A" ? data.Poster : ''}" alt="${data.Title}" />
+            <span>${data.Title}</span>
+          </div>
+          <button class="remove-btn" onclick="removeFromWatchlist('${data.Title}')">✖</button>
+        `;
+        list.appendChild(li);
+      });
   });
 }
 
