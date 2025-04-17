@@ -1,0 +1,126 @@
+:root {
+  --bg: #f5f5f5;
+  --text: #222;
+  --accent: #a67c52;
+  --card: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+  --bg: #1a1a1a;
+  --text: #f4f4f4;
+  --accent: #d8b28f;
+  --card: #292929;
+  --card-shadow: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Text', serif;
+  margin: 0;
+  padding: 40px 20px;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 750px;
+  margin: auto;
+  padding: 40px;
+  background-color: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px var(--card-shadow);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin: 0;
+  color: var(--accent);
+}
+
+.toggle-mode {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: 'Crimson Text', serif;
+}
+
+button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: 'Crimson Text', serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #855d3c;
+}
+
+#movieInfo {
+  margin: 20px 0;
+  text-align: center;
+}
+
+#movieInfo img {
+  max-width: 200px;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  background-color: var(--bg);
+  color: var(--text);
+  margin-bottom: 12px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li button {
+  background-color: #a44;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+}
+
+li button:hover {
+  background-color: #822;
+}
